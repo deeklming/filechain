@@ -3,4 +3,4 @@
 
 * 현재 단일폴더 절대경로만 사용가능
 
-- PerformanceMonitoringProject로 옮길 예정
+- 옮길 예정
