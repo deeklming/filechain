@@ -11,7 +11,7 @@
 1. CBC (Cipher-block Chaining) - integrity
 2. BLAKE2 (Hash Algorithm) - fast
 
-## Concept or Blueprint
+## Blueprint
 <div><img width="500" src="https://user-images.githubusercontent.com/71743128/170218506-62a171c4-8238-4152-91a2-193506ee4455.png"></img></div></br>
 
 ```
@@ -21,6 +21,12 @@
 ```
 네트워크는 메시형으로 구성하고 서버는 현재 실행중인 모든 클라이언트 프로그램 정보를 필요로한다.
 클라이언트는 프로그램 실행 시작시 서버 상관없이 현재 실행중인 모든 프로그램들 중 일치하는 파일체인 값의 수량이 50%만 넘으면 해당 프로그램을 실행 시킬 수 있다.
+
+## Concept
+<div><img width="300" src=""></img></div></br>
+
+Now Hash는 현재 실행 프로그램의 파일 군집 해시값이고 Last Hash는 이전 파일 군집 해시값 또는 초기값이다.   
+Now Hash와 Last Hash를 합쳐서 Filechain Hash라고 하고 이것이 하나의 단위가 된다.   
 
 ### Now
 * 현재 단일폴더 절대경로만 사용가능
