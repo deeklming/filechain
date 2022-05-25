@@ -12,7 +12,8 @@
 2. BLAKE2 (Hash Algorithm) - fast
 
 ## Concept or Blueprint
-<div><img width="600" src=></img></div>
+<div><img width="500" src="https://user-images.githubusercontent.com/71743128/170218506-62a171c4-8238-4152-91a2-193506ee4455.png"></img></div></br>
+
 ```
     total: 5
     success: 3 or more
