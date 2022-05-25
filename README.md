@@ -23,7 +23,7 @@
 클라이언트는 프로그램 실행 시작시 서버 상관없이 현재 실행중인 모든 프로그램들 중 일치하는 파일체인 값의 수량이 50%만 넘으면 해당 프로그램을 실행 시킬 수 있다.
 
 ## Concept
-<div><img width="300" src=""></img></div></br>
+<div><img width="230" src="https://user-images.githubusercontent.com/71743128/170222324-9cf99c7c-d65f-437d-aceb-395e9560c129.png"></img></div></br>
 
 Now Hash는 현재 실행 프로그램의 파일 군집 해시값이고 Last Hash는 이전 파일 군집 해시값 또는 초기값이다.   
 Now Hash와 Last Hash를 합쳐서 Filechain Hash라고 하고 이것이 하나의 단위가 된다.   
