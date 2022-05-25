@@ -23,12 +23,34 @@
 클라이언트는 프로그램 실행 시작시 서버 상관없이 현재 실행중인 모든 프로그램들 중 일치하는 파일체인 값의 수량이 50%만 넘으면 해당 프로그램을 실행 시킬 수 있다.
 
 ## Concept
+### Filechain Hash Structure
 <div><img width="230" src="https://user-images.githubusercontent.com/71743128/170222324-9cf99c7c-d65f-437d-aceb-395e9560c129.png"></img></div></br>
 
 Now Hash는 현재 실행 프로그램의 파일 군집 해시값이고 Last Hash는 이전 파일 군집 해시값 또는 초기값이다.   
-Now Hash와 Last Hash를 합쳐서 Filechain Hash라고 하고 이것이 하나의 단위가 된다.   
+Now Hash와 Last Hash를 합쳐서 Filechain Hash라고 하고 이것이 하나의 단위가 된다.
 
-### Now
+### Create Info Hash
+<div><img width="300" src=""></img></div></br>
+
+Info Hash는 한 파일이나 디렉토리의 정보를 해싱한 것이다.
+Info Hash를 생성 할 때 프로그램 실행 도중 변경하지 않는 모든 디렉토리와 파일들을 불러와서 파일은 파일 이름, 파일 크기, 파일 수정 시간을 문자열로 합치고 디렉토리는 이름만을 가지고 각각 64Byte로 해시화 한다.
+
+### Create Final Hash
+<div><img width="300" src=""></img></div></br>
+
+Final Hash는 Info Hash를 가지고 만든 최종 해시값이다.
+Final Hash는 CBC 형식처럼 서버측에서 지정한 Initialization Hash 또는 Info Hash 또는 Now Hash를 가지고 해시를 XOR한다. 그리고 XOR 과정을 각 디렉토리와 파일마다 반복하여 Final Hash를 만든다.
+Final Hash와 Now Hash의 차이점은 Final Hash는 메모리상에 저장된 해시값이고 Now Hash는 디스크에 저장된 해시값이다.
+
+### Filechain Hash flow
+<div><img width="500" src=""></img></div></br>
+
+프로그램 첫 배포시에는 Initialization Hash를 프로그램 업데이트와 증명시에는 Now Hash를 가지고 Final Hash를 만든다.
+Initialization Hash는 서버측에서 직접 만들거나 랜덤값으로 지정하면 되고 Now Hash와 Last Hash에 중복해서 생성한다.
+서버측에서 프로그램 버전 업데이트시에 Filechain Hash도 업데이트 하는데 Now Hash를 Last Hash로 덮어쓴 다음 Now Hash와 New Info Hash들로 XOR해서 Final Hash를 만들고 Now Hash에 덮어쓴다.
+클라이언트측에서 프로그램 실행전 증명시에 Now Hash와 Now Info Hash들로 XOR해서 Final Hash를 만들고 Last Hash와 비교하고 같으면 무결성이 증명되어 프로그램을 실행하고 다르면 파일 군집에 무엇인가 변경 되었다는 뜻으로 프로그램을 종료한다.
+
+#### Now
 * 현재 단일폴더 절대경로만 사용가능
 
 #### Developer
