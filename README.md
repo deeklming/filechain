@@ -12,6 +12,11 @@ Filechain(파일체인)은 Blockchain(블록체인)을 기반으로 하고 저�
 2. BLAKE2 (Hash Algorithm) - fast
 
 ## Blueprint
+### without network
+<div><img width="460" src="https://user-images.githubusercontent.com/71743128/171807672-694e3c9f-d756-4eb2-a07c-c75655a7eecb.png"></img></div></br>
+네트워크 없이 클라이언트에서 매번 프로그램 실행 전에 무결성을 검사하고 실행한다.   
+
+### with network
 <div><img width="500" src="https://user-images.githubusercontent.com/71743128/170218506-62a171c4-8238-4152-91a2-193506ee4455.png"></img></div></br>
 
 ```
