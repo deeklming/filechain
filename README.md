@@ -67,7 +67,7 @@ Initialization Hash는 서버측에서 직접 만들거나 랜덤값으로 지�
 
 #### Now
 * 현재 단일폴더 절대경로만 사용가능
-* v0.2로 업데이트 필요
+* v0.3으로 업데이트 필요
 
 #### Developer
 * Deeklming
