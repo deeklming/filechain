@@ -66,8 +66,7 @@ Initialization Hash는 서버측에서 직접 만들거나 랜덤값으로 지�
 - filechain verify
 
 #### Now
-* 현재 단일폴더 절대경로만 사용가능
-* 변경 예정
+* 단일폴더 절대경로만 사용가능
 
 #### Developer
 * Deeklming
